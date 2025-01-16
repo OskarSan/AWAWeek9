@@ -30,7 +30,6 @@ const MyContainer: React.FC<MyContainerProps> = () => {
 
     return ( 
       <div>
-        <h1>{header}</h1>
         <MyList header={header} items={items}/>
         <textarea 
             value={newItemText}
