@@ -29,17 +29,18 @@ const MyContainer: React.FC<MyContainerProps> = () => {
     };
 
     const updateClickedItem = (id: string): void => {
-        const updatedItems = items.map((item) => {
+        const newItems = items.map((item) => {
             if (item.id === id) {
                 return { ...item, clicked: !item.clicked };
             }
             return item;
         });
-        setItems(updatedItems);
-    }
+        setItems(newItems);
+    };
+
     return ( 
       <div>
-        <MyList header={header} items={items} updateClickedItem={updateClickedItem}/>
+        <MyList header={header} items={items} updateClickedItem={updateClickedItem} />
         <textarea 
             value={newItemText}
             onChange={(e) => setNewItemText(e.target.value)}

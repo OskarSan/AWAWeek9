@@ -23,7 +23,7 @@ const MyList: React.FC<MyListProps> = ({header, items, updateClickedItem}) => {
             {items.map((item) => (
 
                 <li key={item.id} 
-                    onClick={()=> updateClickedItem(item.id)}
+                    onClick={() => updateClickedItem(item.id)}
                     className={item.clicked ? "clicked-item" : ""}
                 >
                     {item.text}
