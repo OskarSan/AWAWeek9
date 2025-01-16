@@ -10,7 +10,7 @@ export type TItem = {
 interface MyListProps {
     header: string;
     items: TItem[];
-    updateClickedItem: (id: string) => void;
+    updateClickedItem?: (id: string) => void;
 }
 
 
@@ -23,7 +23,7 @@ const MyList: React.FC<MyListProps> = ({header, items, updateClickedItem}) => {
             {items.map((item) => (
 
                 <li key={item.id} 
-                    onClick={() => updateClickedItem(item.id)}
+                    onClick={() => updateClickedItem && updateClickedItem(item.id)}
                     className={item.clicked ? "clicked-item" : ""}
                 >
                     {item.text}
