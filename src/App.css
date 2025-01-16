@@ -41,6 +41,6 @@
   color: #888;
 }
 
-.line-through {
+.clicked-item {
   text-decoration: line-through;
 }

@@ -31,6 +31,7 @@ const MyContainer: React.FC<MyContainerProps> = () => {
     const updateClickedItem = (id: string): void => {
         const newItems = items.map((item) => {
             if (item.id === id) {
+                
                 return { ...item, clicked: !item.clicked };
             }
             return item;

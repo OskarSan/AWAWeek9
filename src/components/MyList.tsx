@@ -24,7 +24,7 @@ const MyList: React.FC<MyListProps> = ({header, items, updateClickedItem}) => {
 
                 <li key={item.id} 
                     onClick={() => updateClickedItem && updateClickedItem(item.id)}
-                    className={item.clicked ? "line-through" : ""}
+                    className={item.clicked ? "clicked-item" : ""}
                 >
                     {item.text}
                 </li>
