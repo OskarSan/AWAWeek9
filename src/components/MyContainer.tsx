@@ -30,11 +30,12 @@ const MyContainer: React.FC<MyContainerProps> = () => {
 
     return ( 
       <div>
-        <MyList header={header} items={items} />
+        <h1>{header}</h1>
+        <MyList header={header} items={items}/>
         <textarea 
             value={newItemText}
             onChange={(e) => setNewItemText(e.target.value)}
-        ></textarea>
+        />
         <button onClick={handleAddItem}>Add Item</button>
       </div>   
       
