@@ -1,6 +1,6 @@
 import React from "react";
 
-type TItem = {
+export type TItem = {
     id: string;
     text: string;
 };
