@@ -24,10 +24,8 @@ const MyContainer: React.FC<MyContainerProps> = () => {
             text: newItemText
         };
         setItems([...items, newItem]);
-  
-    }
-
-
+        setNewItemText("");
+    };
     return ( 
       <div>
         <MyList header={header} items={items}/>
