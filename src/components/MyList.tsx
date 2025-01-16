@@ -1,12 +1,29 @@
 import React from "react";
 
-const MyList: React.FC = () => {
+type TItem = {
+    id: string;
+    text: string;
+};
+
+
+interface MyListProps {
+    header: string;
+    items: TItem[];
+}
+
+
+const MyList: React.FC<MyListProps> = ({header,items}) => {
+
     return (
-        <ul>
-            <li>First item</li>
-            <li>Second item</li>
-            <li>Third item</li>
-        </ul>
+        
+        <div>
+        <h1>{header}</h1>
+        <ol>
+            {items.map((item) => (
+                <li key={item.id}>{item.text}</li>
+            ))}
+        </ol>
+    </div>
     )
 };
 

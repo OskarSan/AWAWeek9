@@ -6,10 +6,15 @@ type MyContainerProps = {
 }
 
 const MyContainer: React.FC<MyContainerProps> = () => {
-  return (
-  
-      <MyList />
-   
+    const header = "List Header";
+    const items = [
+        { id: "1", text: "First item" },
+        { id: "2", text: "Second item" },
+        { id: "3", text: "Third item" }
+    ];
+
+    return (  
+      <MyList header={header} items={items} />
   );
 }
 
