@@ -3,23 +3,31 @@ import React from "react";
 export type TItem = {
     id: string;
     text: string;
+    clicked: boolean;
 };
 
 
 interface MyListProps {
     header: string;
     items: TItem[];
+    updateClickedItem: (id: string) => void;
 }
 
 
-const MyList: React.FC<MyListProps> = ({header, items}) => {
+const MyList: React.FC<MyListProps> = ({header, items, updateClickedItem}) => {
 
     return (
         <div>
             <h1>{header}</h1>
         <ol>
             {items.map((item) => (
-                <li key={item.id}>{item.text}</li>
+
+                <li key={item.id} 
+                    onClick={()=> updateClickedItem(item.id)}
+                    className={item.clicked ? "clicked-item" : ""}
+                >
+                    {item.text}
+                </li>
             ))}
         </ol>
         </div>
